@@ -1,0 +1,849 @@
+
+:root{
+    --text-color: #828282;
+    --heading-color: #4F4F4F;
+    --sub-heading-color: #333333;
+}
+
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background:#f2f2f2;
+
+    /* Global container to hold all element in grid box display*/
+
+    .global_container{
+        padding:3% 0;
+        display: grid;
+        grid-template-columns: .01fr;
+        grid-template-rows: auto auto auto auto auto auto auto auto;
+        gap: 2em;
+        justify-content: center;
+        text-align: center;
+        grid-template-areas: 
+        "owner"
+        "blog"
+        "skills"
+        "how-to"
+        "experiences"
+        "hobbies"
+        "projects"
+        "counters";
+
+        /* My profile section */
+
+        .user_profile_section{
+            background: #ffffff;
+            grid-area: owner;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 5px 10px -1px #e0e0e0;
+           
+                    
+
+            .user_details{
+                text-align: left;
+                padding-left: 1.5em;
+
+                .name{
+                    line-height: .5;
+                   
+                    
+                    h3{
+                        font-size: 1.2rem;
+                        color: var(--heading-color);    
+                    }
+                    p{
+                        font-size: 1.2rem;
+                        color: var(--text-color);
+                    }
+                }
+                .contact{
+                    margin-top: 2.5em;
+                
+                    .contact_box{
+                        display: flex;
+                        gap: 1em;
+                        margin-top: .5em;
+                        
+                        p{
+                            margin-top: -.1em;
+                            font-size: 1rem;
+                            color: var(--heading-color);
+                        }
+                        
+                        
+                    } 
+                    .phone{
+                        margin-top: -.5em;
+                    }
+              
+                }
+                .user_desc{
+                    p{
+                        color: var(--text-color);
+                        font-size: 1.2rem;
+                        //max-width: 408px;
+                        
+
+                    }
+                }
+            }
+        }
+
+       
+    /* my blog section in slideshow format */
+
+
+        .blog_section{
+            grid-area: blog;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+
+            .blog_list{
+                display: flex;
+                gap: 1em;
+                width: 300%;
+                position: relative;
+                margin: 0;
+                left: 0;
+                animation: slider 20s infinite;
+                
+
+
+                .blog_block{
+                 padding: 40px 15px;
+                 border-radius: 10px;
+                 display: flex;
+                 flex-direction: column;
+                 box-shadow: 2px 5px 10px -1px #e0e0e0;
+                 background: #ffffff;
+                 width: 33.3%;
+                 float: left;
+                
+
+
+                 
+
+                 .blog_details{
+                    text-align: left;
+                    padding-left: 1.5em;
+                     .lang_title{
+                         p{
+                            font-size: 1rem;
+                            color: var(--text-color);
+
+                         }
+                         .title{
+                            font-size: 1.2rem;
+                            color: var(--heading-color);
+
+                         }
+                     }
+
+                     .button{
+                         white-space: nowrap;
+                         
+                         .demo-code{
+                             display: inline-block;
+                             text-align: center;
+                             width: 100px;
+                             height: 20px;
+                             padding: .4em 0;
+                             border-radius: 10px;
+                             border: 1px solid #2F80ED;
+                             outline: none;
+                             background-color:#d8e3f1;
+                             font-size: 1rem;
+                             margin-top: 1em;  
+                             color: #2F80ED;
+                             margin-right: .2em;
+                               
+                             
+                         }
+                         
+                         .demo-code:hover{
+                            background: #2F80ED;
+                            color: #f2f2f2;
+                        }
+
+                        
+                          
+                     }
+                     
+
+                     
+                 }
+
+
+
+                }
+            }
+
+            
+
+        }
+
+        @keyframes slider {
+            0%{left:0;}
+            20%{left: 0;}
+            25%{left: -100%;}
+            45%{left: -100%;}
+            50%{left: -200%;}
+            70%{left: -200%;}
+
+            
+        }
+
+               /* My skills display section */
+
+
+        .skills_section{
+            grid-area: skills;
+            border-radius: 10px;
+            padding: 15px;
+            background: #ffffff;
+            box-shadow: 2px 5px 10px -1px #e0e0e0;
+            
+           
+           
+            .skill_box{
+                text-align: left;
+                padding-left: 1.5em;
+                h3{
+                    font-size: 1.3rem;
+                    color: var(--heading-color);  
+
+                }
+                .item{
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    margin-top: -1.5em;
+                    
+                    p{
+                        font-size: 1rem;
+                        color: var(--text-color);
+                        gap: 1em;
+                        display: inline;
+                    }
+
+                    .progress{
+                        width:70%;
+                        min-width:200px;
+                        height: 12px;
+                        background: rgb(197, 197, 197);
+                        border-radius: 5px;
+                        overflow: hidden;
+                        
+
+
+                        .progress_fill{
+                            width:55%;
+                            height: 100%;
+                            background: #2F80ED;
+
+                            span{
+                                font-size:x-small;
+                                font-weight: 800;
+                                float: right;
+                                color:#333333;
+                            }
+                        }
+
+                        .js-fill{
+                            width: 75%;
+                        }
+                        
+                        .css-fill{
+                            width: 85%;
+                        }
+                        .vue-fill{
+                            width: 40%;
+                        }
+                        .redux-fill{
+                            width: 45%;
+                        }
+                        .native-fill{
+                            width: 35%;
+                        }
+                        
+
+                    }
+
+                    
+                    
+                }
+                
+
+            }
+
+        }
+
+        /*How to organize css section*/
+
+        .how_to_section{
+            background:#ffffff;
+            grid-area: how-to;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 5px 10px -1px #e0e0e0;
+            .how_to_block{
+                .title{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 2em;
+                    h2{
+                        font-size: 2rem;
+                        color:var(--heading-color);
+                    }
+                }
+                .how_to_details{
+                    margin-top: 2em;
+                    text-align: left;
+                    padding-left: 1.5em;
+                    p{
+                        font-size: 1rem;
+                        color: var(--text-color);
+                    }
+                    
+                }
+
+                div{
+
+                 text-align: left;
+                 padding-left: 1.5em;
+
+                    .more{
+                        background: linear-gradient(190deg, #2F80ED, #646464 );
+                        display: inline-block;
+                        width: 140px;
+                        padding: 12px 10px;
+                        outline: none;
+                        border:0;
+                        border-radius: 10px;
+                        color: #f2f2f2;
+                        cursor: pointer;
+                        transition: all 300ms ease-in-out;
+
+                        img{
+                            display: none;
+                            transform: translate(50%, 20%);
+                        }
+                        
+                    }
+
+                    .more:hover img{
+                        display: inline-block;
+                    }
+                    .more:hover{
+                        width: 160px;
+                    }
+                }
+
+            }
+        }
+
+
+        /* Experience Section */
+
+        .experiences{
+            background: #ffffff;
+            grid-area: experiences;
+            border-radius: 10px;
+            box-shadow: 2px 5px 10px -1px #e0e0e0;
+            padding: 15px;
+            .experience_container{
+                text-align: left;
+                padding-left: 2em;
+                h3{
+                    font-size: 1.5rem;
+                    color: var(--heading-color);
+                }
+                .content{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 2em;
+                    margin-top: -8em;
+
+                    .details{
+                        margin-top: 8em;
+                        p{
+                            font-size: 1rem;
+                            color: var(--text-color);
+                        }
+    
+                        h4{
+                            font-size: 1.2rem;
+                            color: var(--sub-heading-color);
+                            margin-top: -.5em;
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+        
+        /*hobbies section*/
+        .hobbies{
+            grid-area: hobbies;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 2px 5px 10px -1px #e0e0e0;
+            padding: 15px;
+
+            .hobbies_container{
+                text-align: left;
+                padding-left: 1.5em;
+                h3{
+                    font-size: 1.5rem;
+                    color: var(--heading-color);
+                }
+                .hobbies_list{
+                    
+
+                    .hobbies_desc{
+                    
+                        p{
+                            font-size: 1rem;
+                            color: var(--text-color);
+                            margin-top: -1em;
+                        }
+    
+                        h4{
+                            font-size: 1.2rem;
+                            color: var(--sub-heading-color);
+                            
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+         /*Projects count*/
+
+         .project_section{
+            grid-area: projects;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 5px 10px -1px #e0e0e0;
+            text-align: left;
+        
+            .project_container{
+                margin-top: -1.5em;
+                margin-left: 1.2em;
+                p{
+                    font-size: 1.2em;
+                    color: var(--text-color);
+                }
+
+                .project_list{
+
+                    display: flex;
+                    gap: 1em;
+                    margin-top: -1.5em;
+                    
+
+                    .button{
+                        display:block;
+                        text-decoration: none;
+                        text-align: center;
+                        width: 55px;
+                        height: 20px;
+                        padding: .3em 0;
+                        border-radius: 10px;
+                        border: .1px solid var(--sub-heading-color);
+                        outline: none;
+                        font-size: 1rem;
+                        margin-top: 1em;
+                        cursor: pointer;  
+                        color: var(--sub-heading-color);
+                        
+                       
+                    }
+
+                    .odd{
+                        width: 120px;
+                        padding: .4em;
+                    }
+
+                   
+
+                    .clicked{
+                        background: #2F80ED;
+                        color: #f2f2f2;
+                        border: .1px solid #2F80ED;
+                    }
+                    
+
+                }
+
+            }
+
+                
+
+            
+        }
+
+        /*cOUNT SECTION*/
+
+        .count_section{
+            grid-area: counters;
+           
+            .number_list{
+                display: flex;
+                gap: .5em;
+                float: right;
+                .number{
+                    border: 1px solid var(--sub-heading-color);
+                    padding: .3em;
+                    width: 1.2em;
+                    height: 1em;
+                    color: var(--sub-heading-color);
+                    font-weight: 500;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    text-align: center;
+                    
+       
+                }
+                .clicked{
+                    background: #2F80ED;
+                    color: #f2f2f2;
+                    border: .1px solid #2F80ED;                
+                }
+               
+                .dots{
+                    font-weight: bold;
+                }
+            }
+        }
+
+       
+    }
+
+    .credit{
+        text-align: center;
+        white-space: nowrap;
+        p{
+            font-size: 1rem;
+            color: var(--text-color);
+            a{
+                color:#4F4F4F;
+                font-weight: 700;
+            }
+        }
+    }
+
+}
+
+/* start of media query for 500px above */
+
+
+@media only screen and (min-width: 500px){
+    body{
+        .global_container{
+            .user_profile_section{
+               
+                .user_details{
+                   // text-align: center;
+                    padding-left: 0;
+                    
+                    .contact{
+                        margin-top: 2em;
+                    
+                        .contact_box{
+                           
+                            p{
+                                margin-top: -.1em;
+                                font-size: 1.2rem;
+                                color: var(--heading-color);
+                            }
+                            
+                            
+                        } 
+                        
+                  
+                    }
+                   
+                }
+            }
+
+            .blog_section{
+    
+                .blog_list{
+                  
+                    .blog_block{
+
+                     .blog_details{
+                        text-align: left;
+                        padding-left: 0;
+                         .lang_title{
+                             p{
+                                font-size: 1.2rem;
+                               
+    
+                             }
+                         }
+    
+                         .button{
+                             
+                             .demo-code{
+                                width: 120px;
+                                font-size: 1.2rem;      
+                                 
+                             }
+    
+                        }     
+    
+                         
+                    }
+    
+                }
+            }
+    
+                
+    
+        }
+
+
+        .skills_section{
+           
+            .skill_box{
+                text-align: left;
+                padding-left: 0;
+               
+                .item{
+                    
+                    
+                    p{
+                        font-size: 1.2rem;
+                        color: var(--text-color);
+                        gap: 1em;
+                        display: inline;
+                    }
+
+                   
+                    
+                    
+                }
+                
+
+            }
+
+        }
+
+
+        .how_to_section{
+           
+            .how_to_block{
+                .title{
+                    display: flex;
+                    justify-content: space-between;
+                    h2{
+                        font-size: 2rem;
+                        color:var(--heading-color);
+                    }
+                }
+                .how_to_details{
+                    text-align: left;
+                    padding-left:0;
+                    p{
+                        font-size: 1.2rem;
+                        color: var(--text-color);
+                    }
+                    
+                }
+
+                div{
+                 text-align: left;
+                 padding-left: 0;
+                }
+
+    }   }
+
+    .experiences{
+       
+        .experience_container{
+            text-align: left;
+            padding-left: 0;
+           
+            .content{
+                
+                .details{
+                   
+                    p{
+                        font-size: 1.2rem;
+                       
+                    }
+
+                   
+
+                }
+
+            }
+
+        }
+    }
+
+    .hobbies{
+
+        .hobbies_container{
+            text-align: left;
+            padding-left:0;
+           
+            .hobbies_list{
+                
+                .hobbies_desc{
+                
+                    p{
+                        font-size: 1.2rem;
+                       
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .project_section{
+        padding: 15px;
+    
+        .project_container{
+            margin-left: 0;
+
+            .project_list{
+                
+                .button{
+                    width: 90px;
+                    height: 20px;
+                   
+                }
+                .odd{
+                    width: 130px;
+                }
+
+            }
+
+        }
+        
+    }
+    }
+}
+}
+
+/* End of media query for 500px above */
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1170px) {
+    body{
+        padding: 0 20%;
+       
+        .global_container{
+            grid-template-columns: .5fr .5fr;
+            grid-template-rows: 340px auto auto auto auto auto auto;
+            row-gap: 2em;
+            justify-content: center;
+            grid-template-areas: 
+            "owner owner"
+            "skills how-to"
+            "hobbies how-to"
+            "hobbies experiences"
+            "hobbies experiences"
+            "projects projects"
+            "blog blog"
+            ". counters";
+
+            .user_profile_section{
+                flex-direction: row;
+                gap: 3em;
+                .user_details{
+                   .name_contact{
+                       display: flex;
+                       justify-content: space-between;
+                       gap: 2em;
+                       white-space: nowrap;
+
+                       .contact{
+                           margin-top: 0;
+                           padding-right: 1em;
+                       }
+                       
+                   }
+                }
+            }
+
+            .blog_section{
+                height:auto;
+                .blog_list{
+                    .blog_block{
+                        flex-direction: row;
+                        justify-content: space-between;
+                        gap: 2em;
+                        
+                    
+                    }
+                }
+    
+            }
+
+            .how_to_section{
+                
+               
+                .how_to_block{
+
+                    .title{
+                        margin-top: 1em;
+                    }
+                    
+    
+                    div{
+    
+                     text-align: left;
+                     //padding-left: 1.5em;
+                     margin-top: 5em;
+                    }
+    
+                }
+    
+                
+    
+            }
+           
+        }
+
+        
+           
+
+            
+               
+                
+    }
+
+
+    
+}
+
